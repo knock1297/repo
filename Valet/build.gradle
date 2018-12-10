@@ -27,8 +27,12 @@ repositories {
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-actuator')
     compile('org.springframework.boot:spring-boot-starter-web')
-    testCompile('org.springframework.boot:spring-boot-starter-test')
-    compile ('org.springframework.boot:spring-boot-starter-web')
-    compile ('org.webjars:jquery-ui:1.11.4')
+    compile('org.springframework.boot:spring-boot-starter-test')
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.webjars:jquery-ui:1.11.4')
+    compile("org.springframework:spring-jdbc:+")
+	compile("commons-dbcp:commons-dbcp:1.4")
+	compile("org.mybatis.spring.boot:mybatis-spring-boot-starter:1.1.1")
+	compile("mysql:mysql-connector-java:5.0.8")
     compile group: 'org.apache.tomcat', name: 'tomcat-jasper', version: '8.5.20'
 }
