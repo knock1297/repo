@@ -29,7 +29,7 @@ public class AjaxCommController {
 	@Autowired ApplicationContext applicationContext;
 	
 	@SuppressWarnings({"unchecked","rawtypes"})
-	@RequestMapping(value = "/{className}/{methodName}", method = RequestMethod.POST)
+	@RequestMapping(value = "/{className}/{methodName}", method = RequestMethod.POST, produces = "application/json; charset=utf8")
 	public @ResponseBody Map<String,Object> commonReturnPage(HttpServletRequest req,
 			HttpServletResponse res, HttpSession session, @RequestBody Map<String, Object> paramMap,
 			@PathVariable String className, @PathVariable String methodName) throws Exception {
