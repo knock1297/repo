@@ -7,16 +7,20 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>test</title>
 <script>
-	$(document).ready(function() {
-		alert();
-	});
+// 	$(document).ready(function() {
+// 		alert();
+// 	});
 	$(function(){
-		$("body").click(function(){
-			alert($(this).html());
+		$("#submit1").click(function(){
+			$("#test").submit();
 		})
 	});
 </script>
 </head>
 <body>index입니다.
+<form id="test" method="POST" action="admin/adminTest">
+	<input type="text" value="aa" name="t1" id="t1">
+	<input type="button" id="submit1" value="test">
+</form>
 </body>
 </html>

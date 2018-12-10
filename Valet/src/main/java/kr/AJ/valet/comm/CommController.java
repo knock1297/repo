@@ -39,11 +39,12 @@ public class CommController {
 	
 
 	// Page Forword Post
-	@RequestMapping(value = "/{className}/{methodName}", method = RequestMethod.POST, produces = "application/json; charset=utf8")
+	@RequestMapping(value = "/{className}/{methodName}", method = RequestMethod.POST)
 	public @ResponseBody ModelAndView commonReturnPage(HttpServletRequest req,
 			HttpServletResponse res, HttpSession session, @RequestBody Map<String, Object> paramMap,
 			@PathVariable String className, @PathVariable String methodName, ModelAndView mav) throws Exception {
 
+		System.out.println("test");
 		Map<String, Object> intputDBMap = paramMap;
 		Object beanInstance = applicationContext.getBean(className);
 		Method method = MethodControll.getMethod(beanInstance, methodName);
@@ -57,7 +58,7 @@ public class CommController {
 		return mav;
 	}
 	
-	// Page Forword Post
+	// Page Forword Get
 	@RequestMapping(value = "/{className}/{methodName}", method = RequestMethod.GET)
 	public ModelAndView commonForwardView(HttpServletRequest req, HttpServletResponse res, @PathVariable String className,
 			@PathVariable String methodName, ModelAndView mav) throws Exception, IOException {
