@@ -32,7 +32,8 @@ public class CommController {
 	@RequestMapping(value = {"/"}, method = RequestMethod.GET)
 	public ModelAndView postView(HttpServletRequest req,
 			ModelAndView mav) throws Exception, IOException {
-		mav.setViewName("/test");
+		logger.info("test");
+		mav.setViewName("test");
 		return mav;
 	}
 	
@@ -47,10 +48,12 @@ public class CommController {
 		Object beanInstance = applicationContext.getBean(className);
 		Method method = MethodControll.getMethod(beanInstance, methodName);
 		
-		System.out.println(intputDBMap.toString());
 		mav.addObject("rtMap" , method.invoke(beanInstance, intputDBMap));
 		mav.setViewName(className+"/"+methodName);
-		System.out.println(mav.getModelMap());
+		
+		logger.info(intputDBMap.toString());
+		logger.info(mav.getModelMap().toString());
+		
 		return mav;
 	}
 	
@@ -62,18 +65,4 @@ public class CommController {
 		logger.info("forwardView : "+className + "/" + methodName);
 		return mav;
 	}
-
-//	
-
-
-//	
-//	public static void sessionChk(HttpServletRequest req) {
-//		HttpSession session = req.getSession(true);/*세션*/
-//		Enumeration se = session.getAttributeNames();
-//		while (se.hasMoreElements()) {
-//			String getse = se.nextElement() + "";
-//			System.out.println("@@@@@@@ session : " + getse + " : " + session.getAttribute(getse));
-//		}
-//		
-//	}
 }

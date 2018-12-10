@@ -21,7 +21,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import kr.AJ.valet.commUtil.MethodControll;
 
-@Controller("/ajax")
+@Controller
+@RequestMapping("/ajax")
 public class AjaxCommController {
 
 	private static final Logger logger = LoggerFactory.getLogger(AjaxCommController.class);
