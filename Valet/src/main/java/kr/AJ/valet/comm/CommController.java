@@ -25,10 +25,10 @@ import kr.AJ.valet.commUtil.MethodControll;
 @Controller
 public class CommController {
 
+	private static final Logger logger = LoggerFactory.getLogger(CommController.class);
+	
 	@Autowired ApplicationContext applicationContext;
 	
-	private static final Logger logger = LoggerFactory.getLogger(CommController.class);
-
 	@RequestMapping(value = {"/"}, method = RequestMethod.GET)
 	public ModelAndView postView(HttpServletRequest req,
 			ModelAndView mav) throws Exception, IOException {
