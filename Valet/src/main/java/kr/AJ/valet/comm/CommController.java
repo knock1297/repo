@@ -47,14 +47,11 @@ public class CommController {
 		
 		Map<String, Object> intputDBMap = paramMap;
 		Object beanInstance = applicationContext.getBean(className);
-		System.out.println("test");
 		Method method = MethodControll.getMethod(beanInstance, methodName);
-		System.out.println("test1"+intputDBMap.toString());
 		mav.addObject("rtMap" , method.invoke(beanInstance, intputDBMap));
 		mav.setViewName(className+"/"+methodName);
-		System.out.println("test2");
-//		logger.info(intputDBMap.toString());
-//		logger.info(mav.getModelMap().toString());
+		logger.info(intputDBMap.toString());
+		logger.info(mav.getModelMap().toString());
 		
 		return mav;
 	}
