@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="member">
+	<select id ="test" resultType="String">
+		select val from test
+	</select>
+	
+	<select id ="loginChk" resultType="camelMap" parameterType="map">
+		SELECT 
+			mb_id, 
+			mb_pw, 
+			mb_no, 
+			mb_name, 
+			reg_id, 
+			reg_date
+		FROM 
+			tn_mb_member 
+		where 
+			mb_id = #{loginId} 
+				and mb_pw = #{password}
+				and reg_id is not null
+				and delete_yn = 'N'
+	</select>
+	<select id ="memberModify" resultType="camelMap" parameterType="map">
+		select
+			mm.mb_no,
+			mm.mb_name ,
+			mm.mb_id,
+			(
+				select BB.mb_rank ||' '||AA.mb_name
+				from
+					tn_mb_member AA , tn_mb_info BB
+				where
+					AA.mb_id = BB.mb_id	and	
+					AA.mb_id = mm.reg_id
+			) as reg_member,
+			mm.reg_date,
+			mi.mb_adress,
+			mi.mb_email,
+			mi.mb_ponn,
+			mi.mb_rank,
+			mi.mb_jumin,
+			mi.mb_gender
+		from
+			tn_mb_member mm
+		inner join tn_mb_info mi on
+			mm.mb_id = mi.mb_id
+		where
+			mm.mb_id = #{memberId} 
+			
+	</select>
+</mapper>

@@ -1,0 +1,161 @@
+@charset "UTF-8";
+
+.knock-modal {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0, 0, 0, 0.4);
+}
+
+.knock-modal-content {
+	background-color: #fefefe;
+	margin: 15% auto;
+	padding: 20px;
+	border: 1px solid #888;
+	width: 100%;
+}
+
+/* .knock-close { */
+/* 	color: #aaa; */
+/* 	float: right; */
+/* 	font-size: 28px; */
+/* 	font-weight: bold; */
+/* } */
+
+/* .knock-close:hover, .knock-close:focus { */
+/* 	color: black; */
+/* 	text-decoration: none; */
+/* 	cursor: pointer; */
+/* } */
+.knock-modal-title {
+	/* 	height: 50px; */
+	/* 	padding-bottom: 24px; */
+	/* 	font-size: 26px; */
+	/* 	line-height: 1; */
+	/* 	color: #383838; */
+	/* 	font-weight: normal; */
+	/* 	position: relative; */
+	height: 50px;
+	padding-bottom: 24px;
+	font-size: 26px;
+	line-height: 1;
+	color: #383838;
+	font-weight: normal;
+	position: relative;
+	width: 90%;
+	margin-left: 5%;
+}
+
+.knock-modal-title:after {
+	content: "";
+	display: block;
+	width: calc(100% + 30px);
+	height: 2px;
+	position: absolute;
+	left: -15px;
+	top: 48px;
+	background: #383838;
+}
+
+.knock-modal-txt {
+	/* 	width: 430px; */
+	/* 	margin: 0 auto; */
+	/* 	line-height: 1.5; */
+	/* 	font-size: 16px; */
+	/* 	color: #383838; */
+	/* 	width: 430px; */
+	padding: 60px 0 0px;
+	margin: 50 auto;
+	text-align: center;
+	line-height: 1.5;
+	font-size: 16px;
+	color: #383838;
+	/* 	width: 430px; */
+}
+
+/* 	knock-close */
+.knock-close {
+	/* 	위치수정  */
+	position: absolute;
+	left: 92%;
+	/* 	top: -3%; */
+	cursor: pointer;
+	/* 	right: 50px; */
+	top: -15px;
+	height: 50px;
+	width: 50px;
+	box-sizing: border-box;
+	line-height: 50px;
+	display: inline-block;
+	-webkit-transition: all 530ms cubic-bezier(.48, .030, .195, 1);
+	-webkit-transition: all 530ms cubic-bezier(.48, .030, .195, 1.51);
+	-moz-transition: all 530ms cubic-bezier(.48, .030, .195, 1.51);
+	-o-transition: all 530ms cubic-bezier(.48, .030, .195, 1.51);
+	transition: all 530ms cubic-bezier(.48, .030, .195, 1.51);
+}
+
+.knock-close span {
+	display: block;
+	width: 100%;
+	height: 100%;
+	background: #fff;
+	opacity: 0.5;
+}
+
+.knock-close:after, .knock-close:before {
+	transform: rotate(-45deg);
+	content: '';
+	position: absolute;
+	/* 	float: right; */
+	top: 50%;
+	left: 50% margin-top: -1px;
+	margin-left: -25px;
+	display: block;
+	height: 3px;
+	width: 50px;
+	background-color: #000;
+	transition: all .25s ease-out;
+	z-index: 1;
+}
+
+.knock-close:after {
+	transform: rotate(-135deg);
+}
+
+.knock-close:hover:after, .knock-close:hover:before {
+	transform: rotate(0);
+}
+
+.tabmodeBR, .btn_light_gray, .btn_view_map, .storeName, .b_glay {
+	cursor: pointer;
+}
+
+@import url("//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
+.login-block{
+    background: #DE6262;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to bottom, #FFB88C, #DE6262);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to bottom, #FFB88C, #DE6262); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+float:left;
+width:100%;
+padding : 50px 0;
+}
+.banner-sec{background:url(https://static.pexels.com/photos/33972/pexels-photo.jpg)  no-repeat left bottom; background-size:cover; min-height:500px; border-radius: 0 10px 10px 0; padding:0;}
+.container{background:#fff; border-radius: 10px; box-shadow:15px 20px 0px rgba(0,0,0,0.1);}
+.carousel-inner{border-radius:0 10px 10px 0;}
+.carousel-caption{text-align:left; left:5%;}
+.login-sec{padding: 50px 30px; position:relative;}
+.login-sec .copy-text{position:absolute; width:80%; bottom:20px; font-size:13px; text-align:center;}
+.login-sec .copy-text i{color:#FEB58A;}
+.login-sec .copy-text a{color:#E36262;}
+.login-sec h2{margin-bottom:30px; font-weight:800; font-size:30px; color: #DE6262;}
+.login-sec h2:after{content:" "; width:100px; height:5px; background:#FEB58A; display:block; margin-top:20px; border-radius:3px; margin-left:auto;margin-right:auto}
+.btn-login{background: #DE6262; color:#fff; font-weight:600;}
+.banner-text{width:70%; position:absolute; bottom:40px; padding-left:20px;}
+.banner-text h2{color:#fff; font-weight:600;}
+.banner-text h2:after{content:" "; width:100px; height:5px; background:#FFF; display:block; margin-top:20px; border-radius:3px;}
+.banner-text p{color:#fff;}

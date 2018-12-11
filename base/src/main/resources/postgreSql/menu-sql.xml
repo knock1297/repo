@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="member">
+	<select id ="menuList" resultType="camelMap" parameterType="String">
+		SELECT 
+			menu_id, 
+			menu_href, 
+			menu_label,
+			menu_icon
+		FROM 
+			tn_cf_menu
+		WHERE 
+			mb_id = #{mbId}
+			and menu_gubun = 'title'
+			and delete_yn = 'N'
+		ORDER BY order_num ASC
+	</select>
+	<select id ="subMenuList" resultType="camelMap" parameterType="String">
+		SELECT 
+			menu_id, 
+			menu_href, 
+			menu_label,
+			menu_icon
+		FROM 
+			tn_cf_menu
+		WHERE 
+			mb_id = #{mbId}
+			and menu_gubun = 'sub'
+			and delete_yn = 'N'
+		ORDER BY order_num ASC
+	</select>
+	
+</mapper>

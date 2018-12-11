@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	<bean id="messageSource"
+        class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+        <property name="basename" value="WEB-INF/messages/messages" />
+        <property name="defaultEncoding" value="UTF-8" />
+        <property name="cacheSeconds" value="180" />
+    </bean>
+    
+   	<!-- PostgreSQL JDBC setting -->
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.SimpleDriverDataSource" >
+		<property name="driverClass" value="org.postgresql.Driver" />
+		<property name="url" value="$jdbc:postgresql://127.0.0.1:5432/postgres" />
+		<property name="username" value="postgres" />
+		<property name="password" value="fnrldk21" />
+	</bean>		
+	<!-- mybatis setting -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean" >
+		<property name="dataSource" ref="dataSource" />
+		<property name="configLocation" value="classpath:/mybatis/mybatis-config.xml"/>
+	</bean>
+
+</beans>
